@@ -13,7 +13,7 @@ class TestSectionFeed:
 
     @allure.title('Проверка, что при создании нового заказа счётчики ' \
     '"Выполнено за все время" и "Выполнено за сегодня" увеличиваются,' \
-    ' также номер заказа появляетя в разделе "В работе" в браузере Google Chrome')
+    ' также номер заказа появляется в разделе "В работе" в браузере Google Chrome')
     def test_check_counter_completed_all_time_orders_chrome(self, login_page_chrome_driver):
         feed_page = MainPage(login_page_chrome_driver)
         feed_page.login(Data.EMAIL, Data.PASSWORD)
@@ -35,7 +35,7 @@ class TestSectionFeed:
 
     @allure.title('Проверка, что при создании нового заказа счётчики ' \
     '"Выполнено за все время" и "Выполнено за сегодня" увеличиваются,' \
-    ' также номер заказа появляетя в разделе "В работе" в браузере Mozilla Firefox')
+    ' также номер заказа появляется в разделе "В работе" в браузере Mozilla Firefox')
     def test_check_counter_completed_all_time_orders_firefox(self, login_page_firefox_driver):
         feed_page = MainPage(login_page_firefox_driver)
         feed_page.login(Data.EMAIL, Data.PASSWORD)
