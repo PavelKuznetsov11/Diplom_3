@@ -117,3 +117,4 @@ class MainPage(BasePage):
     @allure.step('Ожидание загрузки страницы Лента заказов')
     def wait_feed_page(self):
         self.wait_element(FPL.FEED_TITLE)
+

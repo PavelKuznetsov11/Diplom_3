@@ -17,3 +17,4 @@ class Data:
 
     COUNT_INGREDIENT = '1'
     DRAG_AND_DROP_ERROR = 'Ингредиент не перетаскивается в корзину конструктора'
+
