@@ -4,6 +4,7 @@ from locators.feed_page_locators import FeedPageLocators as FPL
 from selenium.webdriver.common.action_chains import ActionChains as AC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from urls import Urls
 import allure
 
 class BasePage:

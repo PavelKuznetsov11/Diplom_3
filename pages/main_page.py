@@ -31,6 +31,10 @@ class MainPage(BasePage):
         self.force_click_element(CPL.CLOSE_BUTTON)
         self.wait_element(CPL.CONSTRUCTOR_TITLE)
         return self.get_element_text(CPL.CONSTRUCTOR_TITLE)
+    
+    @allure.step('Получить количество добавленных ингредиентов в корзину')
+    def get_counter_text(self):
+        return self.get_element_text(CPL.COUNTER)
 
     
     @allure.step('Переходим на вкладку конструктор')
@@ -40,9 +44,15 @@ class MainPage(BasePage):
        return self.get_element_text(CPL.CONSTRUCTOR_TITLE)
     
     @allure.step('Переходим на вкладку лента заказов из вкладки конструктора')
-    def change_tab(self, tab_locator, title_locator):
-        self.force_click_element(tab_locator)
-        self.wait_element(title_locator)
+    def change_tab_constructor_to_feed(self):
+        self.force_click_element(BPL.FEED_BUTTON)
+        self.wait_element(FPL.FEED_TITLE)
+
+    @allure.step('Переходим на вкладку конструктор из вкладки лента заказов')
+    def change_tab_feed_to_constructor(self):
+        self.force_click_element(BPL.CONSTRUCTOR_BUTTON)
+        self.wait_element(CPL.CONSTRUCTOR_TITLE)
+    
     
     @allure.step('Получаем счетчик выполненных за все время заказов')
     def get_completed_all_time_orders(self):
@@ -100,3 +110,10 @@ class MainPage(BasePage):
         self.wait_counter(FPL.COMPLETED_TODAY_ORDERS, old_count)
         return self.get_element_text(FPL.COMPLETED_TODAY_ORDERS)
     
+    @allure.step('Ожидание загрузки страницы Конструктор')
+    def wait_constructor_page(self):
+        self.wait_element(CPL.CONSTRUCTOR_TITLE)
+
+    @allure.step('Ожидание загрузки страницы Лента заказов')
+    def wait_feed_page(self):
+        self.wait_element(FPL.FEED_TITLE)
